@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".modules.pdf.PdfFragment">
+
+    <data>
+
+        <variable
+            name="pdfViewModel"
+            type="com.pdf.modules.pdf.PdfViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_bg"
+            android:hint="Customer name"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName|textAutoComplete|textCapWords"
+            android:nextFocusForward="@+id/et_phone"
+            android:padding="5dp"
+            android:textColorHint="@color/grey" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_name"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/et_bg"
+            android:hint="Phone number"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="5dp"
+            android:textColorHint="@color/grey" />
+
+        <Button
+            android:id="@+id/btn_addItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_phone"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_bg"
+            android:text="Add Item"
+            android:textColor="@color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pdfData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btn_generate"
+            android:layout_below="@+id/btn_addItem"
+            android:layout_marginTop="5dp" />
+
+        <Button
+            android:id="@+id/btn_generate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_bg"
+            android:text="Generate PDF"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+</layout>
